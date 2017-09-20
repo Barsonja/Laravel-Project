@@ -4,16 +4,16 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
-use App\Contact;
+use App\Inquiry;
 
-class ContactController extends Controller
+class InquiryController extends Controller
 {
     public function create()
     {
     	return view('contact_form');
     }
 
-    public function postContact(Request $request)
+    public function postInquiry(Request $request)
     {
     	$this->validate($request, [
     		'email' => 'required|email',
@@ -46,15 +46,15 @@ class ContactController extends Controller
 		    'message' => 'required',
 	    ));
 
-	    $contact = new Contact;
+	    $inquiry = new Inquiry;
 
-	    $contact->email = $request->email;
-	    $contact->name = $request->name;
-	    $contact->subject = $request->subject;
-	    $contact->message = $request->message;
+	    $inquiry->email = $request->email;
+	    $inquiry->name = $request->name;
+	    $inquiry->subject = $request->subject;
+	    $inquiry->message = $request->message;
 
-	    $contact->save();
-	    return $this->postContact($request);
+	    $inquiry->save();
+	    return $this->postInquiry($request);
     }
 
 

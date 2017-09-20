@@ -3,7 +3,7 @@
 use Faker\Generator as Faker;
 
 
-$factory->define(App\Contact::class, function (Faker $faker) {
+$factory->define(App\Inquiry::class, function (Faker $faker) {
 	$user = App\User::all()->random();
 	return [
 		'email' => $user->email,
