@@ -16,11 +16,11 @@ Route::get('/', function () {
 });
 
 Route::get('contact',
-	['as' => 'contact', 'uses' => 'ContactController@create']);
+	['as' => 'contact', 'uses' => 'InquiryController@create']);
 
-//Route::post('contact', 'ContactController@postContact'); /* Direct send mail */
+//Route::post('contact', 'InquiryController@postInquiry'); /* Direct send mail */
 
-Route::post('contact', 'ContactController@store'); /* Store mail and send via postContact */
+Route::post('contact', 'InquiryController@store'); /* Store mail and send via postInquiry */
 
 Route::get('users/create',
 	['uses' => 'UsersController@create']);
