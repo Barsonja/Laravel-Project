@@ -26,7 +26,10 @@
         <!-- Email -->
         <div class="form-group">
             <label for="email" class="sr-only">Email</label>
-            <input type="email" name="email" class="form-control" id="email" placeholder="Vaš email naslov">
+            <input type="email" name="email" class="form-control" id="email"
+                    @guest placeholder="Vaš email naslov">
+                    @else value="{{ Auth::user()->email }}">
+                    @endguest
             <span class="help-block"></span>
         </div>
 
