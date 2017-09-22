@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\DB;
 use App\Inquiry;
 
 class InquiryController extends Controller
@@ -55,6 +57,26 @@ class InquiryController extends Controller
 
 	    $inquiry->save();
 	    return $this->postInquiry($request);
+    }
+
+    public function test()
+    {
+				/* $tests = DB::table('inquiries')
+					->select('name', 'subject', 'message')
+					->limit(10)->get(); */
+
+				/* $user_email = Auth::user()->email;
+				$tests = DB::table('inquiries')->where(function ($query) use ($user_email) {
+					$query->where('email', '=', $user_email);
+				})->get(); */
+
+				$tests = DB::table('inquiries')
+					->select('email', 'name', DB::raw("COUNT(*) as count"))
+					->groupBy('email', 'name')
+					->get();
+
+
+	    return view('test', ['tests' => $tests]);
     }
 
 
