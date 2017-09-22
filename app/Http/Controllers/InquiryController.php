@@ -71,8 +71,9 @@ class InquiryController extends Controller
 				})->get(); */
 
 				$tests = DB::table('inquiries')
-					->select('email', 'name', DB::raw("COUNT(*) as count"))
+					->select('name', 'email', DB::raw("COUNT(*) as count"))
 					->groupBy('email', 'name')
+					->limit(5)
 					->get();
 
 
