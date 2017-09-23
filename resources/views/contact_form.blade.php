@@ -12,8 +12,8 @@
 
         <div class="container">
             <div class="row">
-
-                <div class="col-sm-6 col-lg-4 col-lg-offset-1">
+                {{-- contact div for resize --}}
+                <div class="col-sm-12 col-lg-10  col-lg-offset-1">
 
                     <div class="banner__form">
 
@@ -29,7 +29,7 @@
                             </div>
                         @endif
 
-                        <form class="contact__container__form" action="{{ url('contact') }}" method="post">
+                        <form class="contact__container__form" action="{{ url('contact') }}" method="post" >
                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
                             <!-- Header -->
                             <div class="form-group">

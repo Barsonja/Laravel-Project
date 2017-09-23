@@ -28,11 +28,11 @@
 
 <!-- NAVBAR
 ================================================== -->
-<nav class="navbar navbar-fixed-top navbar-default">
+<nav class="navbar navbar-fixed-top navbar-default" style="background-color: #34392f">
     <div class="container">
 
         <!-- Brand name -->
-        <div class="navbar-header">
+        <div class="navbar-header" >
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar_main" aria-expanded="false">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>

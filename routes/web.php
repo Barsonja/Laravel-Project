@@ -32,4 +32,4 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/dbtest', 'InquiryController@test');
+Route::get('/dbtest', 'InquiryController@test')->middleware('auth');

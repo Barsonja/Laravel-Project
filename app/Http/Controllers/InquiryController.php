@@ -61,23 +61,26 @@ class InquiryController extends Controller
 
     public function test()
     {
-				/* $tests = DB::table('inquiries')
+    	if (Auth::check()) {
+		    /* $tests = DB::table('inquiries')
 					->select('name', 'subject', 'message')
-					->limit(10)->get(); */
+					->limit(100)->get(); */
 
-				/* $user_email = Auth::user()->email;
+		    /* $user_email = Auth::user()->email;
 				$tests = DB::table('inquiries')->where(function ($query) use ($user_email) {
 					$query->where('email', '=', $user_email);
 				})->get(); */
 
-				$tests = DB::table('inquiries')
-					->select('name', 'email', DB::raw("COUNT(*) as count"))
-					->groupBy('email', 'name')
-					->limit(5)
-					->get();
+		    $tests = DB::table('inquiries')
+			    ->select('name', 'email', DB::raw("COUNT(*) as count"))
+			    ->groupBy('email', 'name')
+			    /*->limit(5)*/
+			    ->get();
 
 
-	    return view('test', ['tests' => $tests]);
+		    return view('test', ['tests' => $tests]);
+	    }
+	    else return redirect('/login');
     }
 
 
