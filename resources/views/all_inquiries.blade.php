@@ -1,0 +1,49 @@
+@extends('layouts.master')
+
+@section('content')
+    <section class="section_banner" id="section_banner" style="margin-top: 121px;">
+
+        <table class="table table-striped">
+            <thead style="color: #fff; background-color: #373a3c;">
+                <tr>
+                    <th>Client Name</th>
+                    <th>Email</th>
+                    <th>Subject</th>
+                    <th>Message</th>
+                </tr>
+            </thead>
+            @foreach ($tests as $column)
+            <tbody>
+                <td>{{ $column->name }}</td>
+                <td>{{ $column->email }}</td>
+                <td>{{ $column->subject }}</td>
+                <td>{{ $column->message }}</td>
+            </tbody>
+            @endforeach
+        </table>
+        {{ $tests->links() }}
+    </section>
+@endsection
+
+
+
+
+        {{--   For the test select statements
+        @foreach ($tests as $column)
+            <li>{{ $column->name }}</li>
+            <li>{{ $column->subject }}</li>
+            <li>{{ $column->message }}</li>
+            <hr>
+        @endforeach --}}
+
+
+        {{-- Testing groupyBy method
+@foreach($tests as $column)
+    <li>{{ $column->name }}</li>
+    <li>{{ $column->count }}</li>
+    <hr>
+@endforeach
+    </section>
+@endsection
+
+--}}

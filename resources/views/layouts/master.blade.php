@@ -15,7 +15,11 @@
     <!-- CSS Global -->
     <!--build:css static/css/theme.css-->
     <link rel="stylesheet" href="{{ asset('css/theme.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/simple-sidebar.css') }}">
     <!--endbuild-->
+
+    <!-- Bootstrap CDN
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
 
 </head>
 <body data-spy="scroll" data-target="#navbar_main" data-offset="80">
@@ -28,7 +32,7 @@
 
 <!-- NAVBAR
 ================================================== -->
-<nav class="navbar navbar-fixed-top navbar-default" style="background-color: #34392f">
+<nav class="navbar navbar-fixed-top navbar-default" style="background-color: #373a3c;">
     <div class="container">
 
         <!-- Brand name -->
@@ -130,6 +134,7 @@
 <script src="{{ asset('js/theme.js') }}"></script>
 <!-- endbuild -->
 <script src="{{ asset('js/custom.js') }}"></script>
+
 
 </body>
 </html>

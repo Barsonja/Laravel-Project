@@ -32,4 +32,8 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/dbtest', 'InquiryController@test')->middleware('auth');
+Route::get('/dbtest', 'InquiryController@index')->name('inquiries');
+
+Route::get('/dbtest/all-inquiries', 'InquiryController@all_inquiries')->name('all_inquiries')->middleware('auth');
+
+Route::get('/dbtest/user-inquiries', 'InquiryController@user_inquiries')->name('user_inquiries')->middleware('auth');

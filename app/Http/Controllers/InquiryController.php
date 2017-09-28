@@ -59,29 +59,53 @@ class InquiryController extends Controller
 	    return $this->postInquiry($request);
     }
 
-    public function test()
+   /* public function test()
     {
     	if (Auth::check()) {
-		    /* $tests = DB::table('inquiries')
+		     $tests = DB::table('inquiries')
 					->select('name', 'subject', 'message')
-					->limit(100)->get(); */
+					->limit(100)->get();
 
-		    /* $user_email = Auth::user()->email;
+		    $user_email = Auth::user()->email;
 				$tests = DB::table('inquiries')->where(function ($query) use ($user_email) {
 					$query->where('email', '=', $user_email);
-				})->get(); */
+				})->get();
 
-		    $tests = DB::table('inquiries')
+		     $tests = DB::table('inquiries')
 			    ->select('name', 'email', DB::raw("COUNT(*) as count"))
 			    ->groupBy('email', 'name')
-			    /*->limit(5)*/
+			    ->limit(5)
 			    ->get();
 
 
 		    return view('test', ['tests' => $tests]);
 	    }
 	    else return redirect('/login');
-    }
+    } */
+
+   public function index()
+   {
+   	return view('inquiry_index');
+   }
+
+   public function all_inquiries()
+   {
+   	$tests = DB::table('inquiries')
+	            ->select('name', 'email', 'subject', 'message')
+	            ->simplePaginate(25);
+
+	   return view('all_inquiries', ['tests' => $tests]);
+   }
+
+   public function user_inquiries()
+   {
+	   $user_email = Auth::user()->email;
+	   $user_inq = DB::table('inquiries')->where(function ($query) use ($user_email) {
+		   $query->where('email', '=', $user_email);
+	   })->simplePaginate(5);
+
+	   return view('user_inquiries', ['user_inq' => $user_inq]);
+   }
 
 
 }
