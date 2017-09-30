@@ -107,5 +107,15 @@ class InquiryController extends Controller
 	   return view('user_inquiries', ['user_inq' => $user_inq]);
    }
 
+   public function grouped_inquiries()
+   {
+	   $grouped_inq = DB::table('inquiries')
+		   ->select('name', 'email', DB::raw("COUNT(*) as count"))
+		   ->groupBy('email', 'name')->orderBy('count', 'DESC')
+		   ->simplePaginate(10);
+
+	   return view('grouped_inquiries', ['grouped_inq' => $grouped_inq]);
+   }
+
 
 }

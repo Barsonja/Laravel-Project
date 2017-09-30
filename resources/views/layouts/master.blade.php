@@ -43,7 +43,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Working title yo!</a>
+            <a class="navbar-brand" href="{{ route('index') }}">Working title yo!</a>
         </div>
 
         <!-- Links -->
@@ -51,12 +51,12 @@
 
             <ul class="nav navbar-nav navbar-right">
                 <li class="active">
-                    <a href="#section_banner">Začetek</a>
+                    <a href="{{ route('index') }}#section_banner">Začetek</a>
                 </li>
-                <li><a href="#section_services">O nas</a></li>
-                <li><a href="#section_features">Storitve</a></li>
-                <li><a href="#section_news">Novice</a></li>
-                <li><a href="#section_contact">Kontakt</a></li>
+                <li><a href="{{ route('index') }}#section_services">O nas</a></li>
+                <li><a href="{{ route('index') }}#section_features">Storitve</a></li>
+                <li><a href="{{ route('index') }}#section_news">Novice</a></li>
+                <li><a href="{{ route('index') }}#section_contact">Kontakt</a></li>
                 @guest
                 <li><a href="{{ route('login') }}">Login</a></li>
                 <li><a href="{{ route('register') }}">Register</a></li>

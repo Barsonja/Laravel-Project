@@ -13,7 +13,7 @@
 
 Route::get('/', function () {
     return view('index');
-});
+})->name('index');
 
 Route::get('contact',
 	['as' => 'contact', 'uses' => 'InquiryController@create']);
@@ -37,3 +37,10 @@ Route::get('/dbtest', 'InquiryController@index')->name('inquiries');
 Route::get('/dbtest/all-inquiries', 'InquiryController@all_inquiries')->name('all_inquiries')->middleware('auth');
 
 Route::get('/dbtest/user-inquiries', 'InquiryController@user_inquiries')->name('user_inquiries')->middleware('auth');
+
+Route::get('/dbtest/grouped-inquiries', 'InquiryController@grouped_inquiries')
+				->name('grouped_inquiries')->middleware('auth');
+
+Route::get('/dbtest/users', 'UsersController@all_users')->name('users')->middleware('auth');
+
+Route::get('/profile/{username}', 'UsersController@profile')->middleware('auth');

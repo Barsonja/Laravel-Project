@@ -20,10 +20,10 @@
                         <a href="{{ route('user_inquiries') }}">{{ Auth::user()->name }}'s Inquiries</a>
                     </li>
                     <li>
-                        <a href="#">Overview</a>
+                        <a href="{{ route('grouped_inquiries') }}">Number of inquiries by person</a>
                     </li>
                     <li>
-                        <a href="#">Events</a>
+                        <a href="{{ route('users') }}">All users</a>
                     </li>
                     <li>
                         <a href="#">About</a>
