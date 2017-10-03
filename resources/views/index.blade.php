@@ -2,9 +2,13 @@
 
 @section('content')
 
+    <!-- PRELOADER================================================== -->
+    <div class="preloader">
+        <img src="{{ asset('img/spinner.svg') }}" alt="Loading..." class="preloader__spinner">
+    </div>
 
-<!-- BANNER
-================================================== -->
+
+    <!-- BANNER================================================== -->
 <section class="section_banner" id="section_banner">
 
     <!-- Images -->

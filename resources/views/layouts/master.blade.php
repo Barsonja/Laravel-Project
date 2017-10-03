@@ -21,14 +21,11 @@
     <!-- Bootstrap CDN
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
 
+
+
 </head>
 <body data-spy="scroll" data-target="#navbar_main" data-offset="80">
 
-<!-- PRELOADER
-================================================== -->
-<div class="preloader">
-    <img src="{{ asset('img/spinner.svg') }}" alt="Loading..." class="preloader__spinner">
-</div>
 
 <!-- NAVBAR
 ================================================== -->

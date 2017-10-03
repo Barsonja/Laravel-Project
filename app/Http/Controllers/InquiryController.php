@@ -24,12 +24,12 @@ class InquiryController extends Controller
 		    'message' => 'required|min:24',
 	    ]);
 
-	    $data = array(
+	    $data = [
 	    	'email' => $request->email,
 		    'name' => $request->name,
 		    'subject' => $request->subject,
 		    'user_msg' => $request->message
-	    );
+	    ];
 	    Mail::send('emails.contact_message', $data, function($message) use ($data) {
 	    	$message->from($data['email']);
 		    $message->to('test@example.io');
@@ -59,34 +59,12 @@ class InquiryController extends Controller
 	    return $this->postInquiry($request);
     }
 
-   /* public function test()
-    {
-    	if (Auth::check()) {
-		     $tests = DB::table('inquiries')
-					->select('name', 'subject', 'message')
-					->limit(100)->get();
-
-		    $user_email = Auth::user()->email;
-				$tests = DB::table('inquiries')->where(function ($query) use ($user_email) {
-					$query->where('email', '=', $user_email);
-				})->get();
-
-		     $tests = DB::table('inquiries')
-			    ->select('name', 'email', DB::raw("COUNT(*) as count"))
-			    ->groupBy('email', 'name')
-			    ->limit(5)
-			    ->get();
-
-
-		    return view('test', ['tests' => $tests]);
-	    }
-	    else return redirect('/login');
-    } */
 
    public function index()
    {
    	return view('inquiry_index');
    }
+
 
    public function all_inquiries()
    {
