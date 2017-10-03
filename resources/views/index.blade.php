@@ -448,50 +448,8 @@
         <div class="row">
             <div class="col-xs-12">
 
-                <div class="contact__container">
-                    <div class="row">
-                        <div class="col-sm-8">
-                            <!--
+                <div class="contact__container" style="margin-top: 150px;">
 
-                                          <form class="contact__container__form" id="form_sendemail">
-
-
-                                            <div class="form-group">
-                                              <h3>Send us a message</h3>
-                                            </div>
-
-
-                                            <div class="alert" id="form_message" role="alert"></div>
-
-
-                                            <div class="form-group">
-                                              <label for="email" class="sr-only">Email address *</label>
-                                              <input type="email" name="email" class="form-control" id="email" placeholder="Enter your email address">
-                                              <span class="help-block"></span>
-                                            </div>
-
-
-                                            <div class="form-group">
-                                              <label for="name" class="sr-only">Name *</label>
-                                              <input type="text" name="name" class="form-control" id="name" placeholder="Enter your name">
-                                              <span class="help-block"></span>
-                                            </div>
-
-
-                                            <div class="form-group">
-                                              <label for="message" class="sr-only">Message *</label>
-                                              <textarea name="message" class="form-control" id="message" placeholder="Enter your message"></textarea>
-                                              <span class="help-block"></span>
-                                            </div>
-
-
-                                            <button type="submit" class="btn btn-primary">
-                                              Send Message
-                                            </button>
-
-                                          </form> -->
-
-                        </div>
                         <div class="col-sm-4">
 
                             <ul class="contact__container__info">

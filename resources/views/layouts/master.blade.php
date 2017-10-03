@@ -40,7 +40,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="{{ route('index') }}">Working title yo!</a>
+            <a class="navbar-brand" href="{{ route('index') }}">Company title!</a>
         </div>
 
         <!-- Links -->
@@ -94,7 +94,7 @@
             <div class="col-sm-9">
 
                 <p class="footer__copyright">
-                    <span id="footer__year">2017</span> Rok in Žan, projekt št.1 haha</a>
+                    <span id="footer__year">2017</span> Learning on the go =D</a>
                 </p>
 
             </div>
